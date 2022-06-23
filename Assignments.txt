@@ -1,0 +1,446 @@
+
+1./*Write a program to print even numbers from 121 to 229 using for loop.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            for(int i= 120; i<=230; i=i+2)
+            {
+                Console.WriteLine(" Even Number" + i);
+            }
+        }
+    }
+}
+
+
+2./* Write a program to find GCD and LCM of given number*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            int gcd = 0;
+            int a=12, b= 18;
+            for(int i=1; i<=a;i++)
+            {
+                if(a%i==0 && b%i==0)
+                {
+                    Console.WriteLine("Factor ="+ i);
+                    gcd = i;
+                }
+            }
+            Console.WriteLine("gcd "+gcd);
+            int lcm = a * b / gcd;
+            Console.WriteLine("lcm="+lcm);
+        }
+    }
+}
+
+
+3./* Write a program to print all alphabets from a to z using for loop*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            
+            
+            for(char i= 'A'; i<='Z';i++)
+            {
+                    Console.Write(i);
+            }
+        }
+    }
+}
+
+
+4./* Write a program to find sum of all even numbers between 1 to n.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+           
+            int sum = 0;
+            for(int i=0; i<=10; i=i+2)
+            {
+                sum = sum + i;
+                
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+
+
+5./*  Write a program to find sum of all odd numbers between 1 to n.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+           
+            int sum = 0;
+            for(int i=1; i<=10; i++)
+            {
+                if(i%2!=0)
+                sum = sum + i;
+                
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
+
+
+6./*   Write a program to count number of digits in any number.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number");
+            int n = int.Parse(Console.ReadLine());
+            int count = 0;
+            while(n>0)
+            {
+                
+                n = n / 10;
+                count++;
+
+            }
+            Console.WriteLine(count);
+
+        }
+    }
+}
+
+
+7./*    Write a program to calculate product of digits of any number.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number");
+            int n = int.Parse(Console.ReadLine());
+            int last;
+            int prod = 1;
+            while(n>0)
+            {
+                last = n % 10;
+                prod = prod * last;
+                n = n / 10;
+                
+
+            }
+            Console.WriteLine(prod);
+
+        }
+    }
+}
+
+
+
+8./* WAP to print table of given no.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            int i, num;
+
+            
+            Console.WriteLine("Enter number to print table: ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            for (i = 1; i <= 10; i++)
+            {
+                           
+                Console.Write("{0} X {1} = {2} \n", num, i, num * i);
+            }
+        }
+        
+    }
+}
+
+
+
+9./* WAP to print squares from 1 to20.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+           
+            int sqr = 0;
+            for(int i=0; i<=20; i++)
+            {
+                 sqr = i * i;
+                Console.WriteLine(sqr);
+            }
+        }
+        
+    }
+}
+
+
+
+
+10./* WAP to accept base and index from user and calculates power to print squares from 1 to20.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter base");
+            int Base = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Index");
+            int index = int.Parse(Console.ReadLine());
+            int result = 1;
+            while (index > 0)
+            {
+                result = result* Base;
+                index--;
+            }
+            Console.WriteLine(result);
+        }
+        
+    }
+}
+
+
+
+11./* WAP to check given no is palindrome or not. Original =Reverse
+Eg 1221.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number");
+            int n = int.Parse(Console.ReadLine());
+            int temp = n;
+            int reverse = 0;
+            while(n>0)
+            {
+                int last = n % 10;
+                reverse = reverse * 10 + last;
+                n = n / 10;
+            }
+            if(reverse==temp)
+            {
+                Console.WriteLine("number is palindrome");
+            }
+            else
+            {
+                Console.WriteLine("number is not palindrome");
+            }
+        }
+    }
+}
+
+
+
+12./* WAP to check given no is automorphic or not
+   input n=25
+  output Automorphic
+as 25*25=625
+.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            int num = 25, temp = 1;
+            int sqr = num * num;
+            while(num>0)
+            {
+                if (num % 10 != sqr % 10)
+                    temp = 0;
+                num = num / 10;
+                sqr = sqr / 10;
+            }
+            if(temp==1)
+            {
+                Console.WriteLine("Autophormic number");
+            }
+            else
+            {
+                Console.WriteLine("Not Autophormic number");
+            }
+        }
+    }
+}
+
+
+
+13./*WAP to check given no is Krishnamurthy or not
+eg)  153=1!+5!+3!=153.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            int n = 145;
+            int sum = 0;
+            int temp = n;
+            while (n != 0)
+            {
+                int l = n % 10;
+                int f = 1;
+                for (int i = 1; i <= l; i++)
+                {
+                    f = f * i;
+                }
+                sum = sum + f;
+                n = n / 10;
+            }
+            if (sum == temp)
+                Console.WriteLine("Krishnamurthy number");
+            else
+                Console.WriteLine("Not Krishnamurthy number");
+
+        }
+    }
+}
+
+
+
+14./*WAP to find given number is Harshad/Niven number or not
+    An harshad number is an integer number divisible by sum of its digit 
+   Eg 18 sum=9  and 18 is divisible by 9
+.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            int sum = 0;
+            Console.WriteLine("Enter number");
+            int n=int.Parse(Console.ReadLine());
+            for (int temp = n; temp > 0; temp /= 10)
+            {
+                sum += temp % 10;
+            }
+            if (n % sum == 0) 
+            {
+                Console.WriteLine("Harshad Number");
+            }
+            else
+            {
+                Console.WriteLine("not Harshad number");
+            }
+        }
+    }
+}
+    
+
+15./* Write a program to print odd numbers from 521 to 229 using while loop
+.*/
+
+using System;
+
+namespace MyFirstProject
+{
+    class Class1
+    {
+        public static void Main(string[] args)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 2 != 0)
+                    Console.WriteLine(i);
+            }
+        }
+    }
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
